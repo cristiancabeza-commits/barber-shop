@@ -1,0 +1,18 @@
+// Exportación común de los componentes de interfaz.
+export 'navegacion_vistas.dart';
+export 'estructura_pantalla.dart';
+export 'tarjeta.dart';
+export 'titulo_seccion.dart';
+export 'campo_vista.dart';
+export 'campo_contrasena.dart';
+export 'selector_vista.dart';
+export 'interruptor_vista.dart';
+export 'campos_almuerzo.dart';
+export 'boton_vista.dart';
+export 'dato_vista.dart';
+export 'etiqueta_estado.dart';
+export 'tarjeta_registro.dart';
+export 'opciones_vista.dart';
+export 'logotipo.dart';
+export 'buscador_vista.dart';
+export 'tarjeta_gestion.dart';

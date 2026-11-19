@@ -1,0 +1,27 @@
+name: barrber_figma
+description: Vistas originales de Figma organizadas según el ejemplo del profesor.
+publish_to: none
+version: 1.0.8+9
+environment:
+  sdk: ^3.13.1
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_secure_storage: ^11.2.0
+  http: ^1.6.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter.ttf
+    - family: Gabarito
+      fonts:
+        - asset: assets/fonts/Gabarito.ttf
