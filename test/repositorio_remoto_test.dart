@@ -10,6 +10,67 @@ import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 
 void main() {
+  test(
+    'Los módulos comparten sus cambios con el coordinador de pantallas',
+    () async {
+      final api = ApiService(baseUrl: 'https://example.test');
+      final sesion = ServicioSesion(api);
+      final repositorio = RepositorioRemoto(ServicioBarberia(api, sesion));
+      var avisos = 0;
+      repositorio.addListener(() => avisos++);
+      final cliente = MockClient((peticion) async {
+        if (peticion.url.path == '/api/Sesion') {
+          return http.Response('{"accessToken":"token_prueba"}', 200);
+        }
+        final Object datos;
+        switch (peticion.url.path) {
+          case '/api/Especialidades':
+            datos = [
+              {'id': 3, 'nombre': 'Barberia'},
+            ];
+          case '/api/Reservas':
+            datos = [
+              {
+                'id': 15,
+                'fecha': '2026-11-20T08:00:00',
+                'clienteId': 2,
+                'servicioId': 5,
+              },
+            ];
+          case '/api/liquidaciones-comisiones':
+            datos = [
+              {
+                'id': 16,
+                'fechaInicio': '2026-11-18',
+                'fechaFin': '2026-11-18',
+                'totalFacturado': 26000,
+              },
+            ];
+          default:
+            throw StateError('Petición inesperada: ${peticion.url.path}');
+        }
+        return http.Response(jsonEncode({'data': datos}), 200);
+      });
+      await http.runWithClient(() async {
+        await sesion.iniciar('usuario', 'clave');
+        // Se recarga cada módulo directamente, sin pasar por cargar() del coordinador.
+        await repositorio.especialidades.cargar();
+        expect(
+          repositorio.listar(Modulo.especialidades).single.nombre,
+          'Barberia',
+        );
+        expect(avisos, 1);
+        await repositorio.moduloReservas.cargar();
+        expect(repositorio.reservas.single.id, '15');
+        expect(avisos, 2);
+        await repositorio.liquidaciones.cargar();
+        expect(repositorio.cierres.single.total, 26000);
+        expect(avisos, 3);
+      }, () => cliente);
+      repositorio.dispose();
+    },
+  );
+
   test('Carga datos de la cuenta y guarda el cliente con el token', () async {
     final api = ApiService(baseUrl: 'https://example.test');
     final sesion = ServicioSesion(api);
