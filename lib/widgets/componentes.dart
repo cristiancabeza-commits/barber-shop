@@ -1,4 +1,3 @@
-// Exportación común de los componentes de interfaz.
 export 'navegacion_vistas.dart';
 export 'estructura_pantalla.dart';
 export 'tarjeta.dart';

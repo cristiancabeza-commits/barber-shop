@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-/// Recuerda el último acceso válido mediante el almacenamiento de la plataforma.
 class CredencialesGuardadas {
   static const _almacen = FlutterSecureStorage();
   static const _llave = 'ultimo_acceso_barberia';

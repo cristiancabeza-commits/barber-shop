@@ -1,4 +1,3 @@
-/// GET /api/eventualidades
 class ListarInasistenciasRequest {
   const ListarInasistenciasRequest({this.profesionalId});
 

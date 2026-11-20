@@ -1,4 +1,3 @@
-/// GET /api/Profesionales
 class ListarProfesionalesRequest {
   const ListarProfesionalesRequest({this.soloActivos});
 

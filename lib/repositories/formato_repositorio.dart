@@ -1,6 +1,5 @@
 import '../models/datos_barberia.dart';
 
-// Adaptan los datos de la API al formato que utilizan los formularios.
 const diasSemana = [
   'Domingo',
   'Lunes',

@@ -1,0 +1,38 @@
+meta {
+  name: Crear jornadas masivas
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/horarios-laboral/masivo
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "profesionalId": {{profesionalId}},
+    "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "horaInicio": "08:00:00",
+    "horaFin": "18:00:00",
+    "tieneAlmuerzo": true,
+    "horaInicioAlmuerzo": "12:00:00",
+    "horaFinAlmuerzo": "13:00:00"
+  }
+}

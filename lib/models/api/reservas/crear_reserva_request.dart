@@ -1,4 +1,3 @@
-/// POST /api/Reservas
 class CrearReservaRequest {
   const CrearReservaRequest({
     required this.fecha,

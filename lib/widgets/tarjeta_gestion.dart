@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'etiqueta_estado.dart';
 
-/// La tarjeta completa y los botones de 48 px permiten abrir o editar un registro.
 class TarjetaGestion extends StatelessWidget {
   const TarjetaGestion(
     this.titulo,

@@ -1,0 +1,42 @@
+meta {
+  name: Crear cliente
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/clientes
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "documento": "{{documentoCliente}}",
+    "nombres": "Prueba",
+    "apellidos": "Barrber",
+    "fechaNacimiento": "1995-05-15",
+    "celular": "3000000000",
+    "correo": "prueba@example.invalid"
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.clienteId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('clienteId', id);
+    }
+  }
+}

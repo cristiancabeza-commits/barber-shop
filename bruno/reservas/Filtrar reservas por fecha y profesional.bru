@@ -1,0 +1,15 @@
+meta {
+  name: Filtrar reservas por fecha y profesional
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/reservas?fechaInicio={{fechaPrueba}}&fechaFin={{fechaPrueba}}T23:59:59&profesionalId={{profesionalId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

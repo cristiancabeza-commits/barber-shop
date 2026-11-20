@@ -1,4 +1,3 @@
-/// Permite encontrar nombres con o sin tildes y sin distinguir mayúsculas.
 String normalizarNombre(String texto) {
   const originales = 'áéíóúüñ';
   const reemplazos = 'aeiouun';

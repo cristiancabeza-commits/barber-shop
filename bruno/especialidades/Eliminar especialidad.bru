@@ -1,0 +1,15 @@
+meta {
+  name: Eliminar especialidad
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/api/especialidades/{{especialidadId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

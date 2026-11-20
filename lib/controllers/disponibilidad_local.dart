@@ -1,7 +1,6 @@
 import '../models/datos_barberia.dart';
 import 'estado_aplicacion.dart';
 
-/// Disponibilidad simulada: el servidor será la autoridad al conectar la API.
 List<String> horasDisponibles(
   String profesional,
   DateTime fecha,

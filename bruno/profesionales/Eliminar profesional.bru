@@ -1,0 +1,15 @@
+meta {
+  name: Eliminar profesional
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/api/profesionales/{{profesionalId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

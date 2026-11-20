@@ -1,4 +1,3 @@
-/// GET /api/agenda
 class ConsultarDisponibilidadRequest {
   const ConsultarDisponibilidadRequest({
     this.fecha,

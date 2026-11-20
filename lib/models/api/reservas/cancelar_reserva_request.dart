@@ -1,4 +1,3 @@
-/// DELETE /api/Reservas/{id}
 class CancelarReservaRequest {
   const CancelarReservaRequest({
     required this.id,

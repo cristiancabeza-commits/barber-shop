@@ -7,7 +7,6 @@ class OpcionBusqueda {
   final String id, nombre, detalle;
 }
 
-/// Selecciona por identificador; el texto visible no se utiliza como clave.
 class SelectorBusqueda extends StatelessWidget {
   const SelectorBusqueda({
     super.key,

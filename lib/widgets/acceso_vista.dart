@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'navegacion_vistas.dart';
 
-/// Hace pulsable un elemento original de Figma sin modificar su diseño.
 class AccesoVista extends StatelessWidget {
   const AccesoVista({
     super.key,

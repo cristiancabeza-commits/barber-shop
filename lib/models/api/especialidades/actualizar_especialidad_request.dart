@@ -1,4 +1,3 @@
-/// PUT /api/Especialidades/{id}
 class ActualizarEspecialidadRequest {
   const ActualizarEspecialidadRequest({required this.id, required this.nombre});
 

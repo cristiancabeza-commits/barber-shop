@@ -4,7 +4,6 @@ import '../models/api/comisiones/listar_servicios_de_comision_request.dart';
 import '../services/remote/api_service.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Coordina las consultas de comisiones usando su servicio remoto.
 class RepositorioComisiones {
   RepositorioComisiones(ServicioBarberia conexion)
     : _comisiones = ComisionesService(conexion);

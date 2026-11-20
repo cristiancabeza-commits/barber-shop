@@ -1,5 +1,3 @@
-/// POST /api/Clientes
-///
 class CrearClienteRequest {
   const CrearClienteRequest({
     required this.documento,

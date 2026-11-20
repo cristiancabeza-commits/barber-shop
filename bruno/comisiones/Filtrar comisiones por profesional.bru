@@ -1,0 +1,15 @@
+meta {
+  name: Filtrar comisiones por profesional
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/comisiones?profesionalId={{profesionalId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

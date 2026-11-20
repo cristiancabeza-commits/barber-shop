@@ -1,0 +1,28 @@
+meta {
+  name: Actualizar inasistencia
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/eventualidades/{{eventualidadId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "fechaInicio": "{{fechaPrueba}}T15:00:00",
+    "fechaFin": "{{fechaPrueba}}T16:30:00",
+    "motivo": 4,
+    "observacion": "Prueba sintetica editada Bruno"
+  }
+}

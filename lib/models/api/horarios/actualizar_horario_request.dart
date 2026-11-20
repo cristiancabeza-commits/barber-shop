@@ -1,4 +1,3 @@
-/// PUT /api/horarios-laboral/{id}
 class ActualizarHorarioRequest {
   const ActualizarHorarioRequest({
     required this.id,

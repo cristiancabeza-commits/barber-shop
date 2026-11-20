@@ -1,0 +1,39 @@
+meta {
+  name: Crear reserva con cliente registrado
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/reservas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "fecha": "{{fechaReserva}}",
+    "servicioId": {{servicioId}},
+    "clienteId": {{clienteId}}
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.reservaId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('reservaId', id);
+    }
+  }
+}

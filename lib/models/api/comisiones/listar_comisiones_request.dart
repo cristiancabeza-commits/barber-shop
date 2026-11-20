@@ -1,4 +1,3 @@
-/// GET /api/Comisiones
 class ListarComisionesRequest {
   const ListarComisionesRequest({
     this.profesionalId,

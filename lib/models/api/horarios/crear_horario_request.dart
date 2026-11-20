@@ -1,4 +1,3 @@
-/// POST /api/horarios-laboral
 class CrearHorarioRequest {
   const CrearHorarioRequest({
     required this.profesionalId,

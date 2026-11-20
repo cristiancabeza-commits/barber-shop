@@ -1,0 +1,15 @@
+meta {
+  name: Consultar servicios de comision
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/comisiones/{{comisionId}}/servicios
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

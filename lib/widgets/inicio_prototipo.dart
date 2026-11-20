@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../screens/inicio/pantalla_presentacion.dart';
 
-/// Presentación inicial seguida del acceso. Solo controla el flujo visual.
 class InicioPrototipo extends StatefulWidget {
   const InicioPrototipo({super.key});
   @override

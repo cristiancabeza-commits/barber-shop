@@ -1,0 +1,29 @@
+meta {
+  name: Iniciar sesion
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/sesion
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "usuario": "{{usuario}}",
+    "clave": "{{clave}}"
+  }
+}
+
+script:post-response {
+  const respuesta = res.getBody();
+  if (res.getStatus() === 200 && respuesta?.accessToken) {
+    bru.setVar('token', respuesta.accessToken);
+  }
+}

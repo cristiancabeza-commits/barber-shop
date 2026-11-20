@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Adapta superficies y textos; en oscuro conserva los colores de Figma.
 Color colorVista(
   BuildContext context,
   int original, {

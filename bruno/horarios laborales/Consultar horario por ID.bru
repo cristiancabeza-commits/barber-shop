@@ -1,0 +1,15 @@
+meta {
+  name: Consultar horario por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/horarios-laboral/{{horarioLaboralId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

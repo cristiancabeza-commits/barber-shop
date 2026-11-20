@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Campo común: texto legible, fechas con calendario y estados de solo lectura.
 class CampoVista extends StatefulWidget {
   const CampoVista(
     this.label, {

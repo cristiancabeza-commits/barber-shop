@@ -1,0 +1,26 @@
+meta {
+  name: Cancelar reserva
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/api/reservas/{{reservaId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "motivoCancelacionId": null,
+    "motivoOtro": "Cancelacion de reserva sintetica de prueba Bruno"
+  }
+}

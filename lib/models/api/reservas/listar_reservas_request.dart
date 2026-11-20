@@ -1,4 +1,3 @@
-/// GET /api/Reservas
 class ListarReservasRequest {
   const ListarReservasRequest({
     this.fechaInicio,

@@ -17,8 +17,6 @@ import 'repositorio_agenda.dart';
 import 'repositorio_comisiones.dart';
 import 'repositorio_liquidaciones.dart';
 
-/// Coordinador de los módulos: las pantallas conservan un único punto de acceso.
-/// Cada repositorio contiene las operaciones de su módulo y avisa sus cambios.
 class RepositorioRemoto extends RepositorioBarberia {
   RepositorioRemoto(ServicioBarberia conexion) {
     clientes = RepositorioClientes(conexion);
@@ -31,7 +29,7 @@ class RepositorioRemoto extends RepositorioBarberia {
     moduloComisiones = RepositorioComisiones(conexion);
     liquidaciones = RepositorioLiquidaciones(conexion);
     moduloReservas = RepositorioReservas(conexion, listar);
-    // Retransmite los cambios para que Inicio y Agenda se actualicen.
+
     for (final catalogo in _catalogos.values) {
       catalogo.addListener(notifyListeners);
     }

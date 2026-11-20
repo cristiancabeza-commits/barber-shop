@@ -1,0 +1,15 @@
+meta {
+  name: Buscar cliente por documento
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/clientes/{{documentoCliente}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

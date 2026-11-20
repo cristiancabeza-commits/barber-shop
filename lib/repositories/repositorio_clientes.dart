@@ -10,7 +10,6 @@ import '../models/api/clientes/eliminar_cliente_request.dart';
 import '../models/api/clientes/listar_clientes_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de clientes. Las peticiones HTTP están en ClientesService.
 class RepositorioClientes extends RepositorioCatalogo {
   RepositorioClientes(ServicioBarberia conexion)
     : _servicio = ClientesService(conexion);

@@ -6,7 +6,6 @@ import '../services/local/credenciales_guardadas.dart';
 import 'componentes.dart';
 import 'campo_formulario.dart';
 
-/// Formulario de inicio de sesión.
 class AccesoLocal extends StatefulWidget {
   const AccesoLocal({
     super.key,

@@ -1,0 +1,15 @@
+meta {
+  name: Listar liquidaciones
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/liquidaciones-comisiones
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

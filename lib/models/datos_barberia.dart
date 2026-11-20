@@ -7,7 +7,6 @@ enum Modulo {
   inasistencias,
 }
 
-/// Datos de presentación. El adaptador HTTP deberá mapear el contrato de la API.
 class Registro {
   Registro(this.id, Map<String, String> datos, {this.activo = true})
     : datos = Map.unmodifiable(datos);

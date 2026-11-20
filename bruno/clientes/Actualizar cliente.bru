@@ -1,0 +1,30 @@
+meta {
+  name: Actualizar cliente
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/clientes/{{clienteId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "documento": "{{documentoCliente}}",
+    "nombres": "Prueba editada",
+    "apellidos": "Barrber",
+    "fechaNacimiento": "1995-05-15",
+    "celular": "3000000000",
+    "correo": "prueba@example.invalid"
+  }
+}

@@ -9,7 +9,6 @@ import '../models/api/inasistencias/eliminar_inasistencia_request.dart';
 import '../models/api/inasistencias/listar_inasistencias_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de inasistencias. Las peticiones HTTP están en InasistenciasService.
 class RepositorioInasistencias extends RepositorioCatalogo {
   RepositorioInasistencias(ServicioBarberia conexion)
     : _servicio = InasistenciasService(conexion);

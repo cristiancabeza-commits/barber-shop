@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'colores_aplicacion.dart';
 
-/// Tipografía, espaciado y controles compartidos por todas las vistas.
 abstract final class TemaAplicacion {
   static final claro = crear(false);
   static final oscuro = crear(true);

@@ -1,4 +1,3 @@
-/// POST /api/horarios-laboral/masivo
 class CrearHorariosMasivosRequest {
   const CrearHorariosMasivosRequest({
     required this.profesionalId,

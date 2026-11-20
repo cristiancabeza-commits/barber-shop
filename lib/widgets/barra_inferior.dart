@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'navegacion_vistas.dart';
 
-/// Barra fija fuera del contenido desplazable de las vistas originales.
 class BarraInferior extends StatelessWidget {
   const BarraInferior({super.key, this.activo = 3});
   final int activo;

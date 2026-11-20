@@ -1,0 +1,37 @@
+meta {
+  name: Crear especialidad
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/especialidades
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nombre": "{{nombrePrueba}}"
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.especialidadId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('especialidadId', id);
+    }
+  }
+}

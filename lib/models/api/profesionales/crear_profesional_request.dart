@@ -1,4 +1,3 @@
-/// POST /api/Profesionales
 class CrearProfesionalRequest {
   const CrearProfesionalRequest({
     required this.documento,

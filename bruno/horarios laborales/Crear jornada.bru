@@ -1,0 +1,43 @@
+meta {
+  name: Crear jornada
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/horarios-laboral
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "profesionalId": {{profesionalId}},
+    "diaSemana": 0,
+    "horaInicio": "08:00:00",
+    "horaFin": "18:00:00",
+    "tieneAlmuerzo": true,
+    "horaInicioAlmuerzo": "12:00:00",
+    "horaFinAlmuerzo": "13:00:00"
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.horarioLaboralId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('horarioLaboralId', id);
+    }
+  }
+}

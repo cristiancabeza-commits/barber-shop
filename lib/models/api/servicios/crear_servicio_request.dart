@@ -1,4 +1,3 @@
-/// POST /api/Servicios
 class CrearServicioRequest {
   const CrearServicioRequest({
     required this.nombre,

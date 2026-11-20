@@ -1,4 +1,3 @@
-/// PUT /api/eventualidades/{id}
 class ActualizarInasistenciaRequest {
   const ActualizarInasistenciaRequest({
     required this.id,

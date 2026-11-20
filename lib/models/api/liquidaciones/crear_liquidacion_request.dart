@@ -1,4 +1,3 @@
-/// POST /api/liquidaciones-comisiones
 class CrearLiquidacionRequest {
   const CrearLiquidacionRequest({
     required this.fechaInicio,

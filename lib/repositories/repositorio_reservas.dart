@@ -12,7 +12,6 @@ import '../models/api/reservas/crear_reserva_request.dart';
 import '../models/api/reservas/listar_reservas_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Mantiene las reservas y coordina crear, modificar, cancelar y recargar.
 class RepositorioReservas extends ChangeNotifier {
   RepositorioReservas(ServicioBarberia conexion, this.listar)
     : _apiReservas = ReservasService(conexion);

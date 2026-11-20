@@ -1,0 +1,15 @@
+meta {
+  name: Listar horarios
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/horarios-laboral
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

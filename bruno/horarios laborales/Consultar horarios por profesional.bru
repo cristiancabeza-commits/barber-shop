@@ -1,0 +1,15 @@
+meta {
+  name: Consultar horarios por profesional
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/horarios-laboral/profesional/{{profesionalId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

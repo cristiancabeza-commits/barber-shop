@@ -1,0 +1,15 @@
+meta {
+  name: Listar inasistencias
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/eventualidades
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

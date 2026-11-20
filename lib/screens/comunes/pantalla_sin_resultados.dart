@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/componentes.dart';
 
-/// Vista complementaria: Sin resultados.
-/// Mantiene la identidad visual roja, dorada y oscura.
 class PantallaSinResultados extends StatelessWidget {
   const PantallaSinResultados({super.key});
   @override

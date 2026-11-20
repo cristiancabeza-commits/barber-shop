@@ -1,4 +1,3 @@
-/// POST /api/Especialidades
 class CrearEspecialidadRequest {
   const CrearEspecialidadRequest({required this.nombre});
 

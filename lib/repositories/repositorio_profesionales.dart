@@ -10,7 +10,6 @@ import '../models/api/profesionales/listar_profesionales_request.dart';
 import '../models/api/profesionales/listar_profesionales_por_servicio_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de profesionales. Las peticiones HTTP están en ProfesionalesService.
 class RepositorioProfesionales extends RepositorioCatalogo {
   RepositorioProfesionales(ServicioBarberia conexion)
     : _servicio = ProfesionalesService(conexion);

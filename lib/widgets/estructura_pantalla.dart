@@ -7,7 +7,6 @@ import 'tarjeta_gestion.dart';
 import 'tarjeta_registro.dart';
 import 'busqueda_por_nombre.dart';
 
-/// Estructura común adaptable: cabecera y navegación fijas, cuerpo desplazable.
 class EstructuraPantalla extends StatefulWidget {
   const EstructuraPantalla({
     super.key,

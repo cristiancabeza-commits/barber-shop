@@ -9,7 +9,6 @@ import '../models/api/servicios/eliminar_servicio_request.dart';
 import '../models/api/servicios/listar_servicios_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de servicios. Las peticiones HTTP están en ServiciosService.
 class RepositorioServicios extends RepositorioCatalogo {
   RepositorioServicios(ServicioBarberia conexion)
     : _servicio = ServiciosService(conexion);

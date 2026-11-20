@@ -1,0 +1,15 @@
+meta {
+  name: Consultar especialidad por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/especialidades/{{especialidadId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

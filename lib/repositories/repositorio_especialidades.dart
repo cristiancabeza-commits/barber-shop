@@ -9,7 +9,6 @@ import '../models/api/especialidades/eliminar_especialidad_request.dart';
 import '../models/api/especialidades/listar_especialidades_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de especialidades. Las peticiones HTTP están en EspecialidadesService.
 class RepositorioEspecialidades extends RepositorioCatalogo {
   RepositorioEspecialidades(ServicioBarberia conexion)
     : _servicio = EspecialidadesService(conexion);

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'barra_inferior.dart';
 
-/// Presenta las medidas originales de 412 px sin deformar el diseño.
-/// En pantallas estrechas reduce el lienzo proporcionalmente; permite desplazamiento.
 class LienzoFigma extends StatelessWidget {
   const LienzoFigma({
     super.key,

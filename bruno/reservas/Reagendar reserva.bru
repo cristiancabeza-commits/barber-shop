@@ -1,0 +1,28 @@
+meta {
+  name: Reagendar reserva
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/api/reservas/{{reservaId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "fecha": "{{fechaPrueba}}T11:00:00",
+    "servicioId": {{servicioId}},
+    "profesionalId": {{profesionalId}},
+    "clienteId": {{clienteId}}
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Actualizar profesional
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/profesionales/{{profesionalId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "documento": "{{documentoProfesional}}",
+    "nombres": "Prueba editada",
+    "apellidos": "Profesional Barrber",
+    "fechaNacimiento": "1990-01-01",
+    "porcentaje": 15,
+    "estado": true
+  }
+}

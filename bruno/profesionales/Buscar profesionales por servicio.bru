@@ -1,0 +1,15 @@
+meta {
+  name: Buscar profesionales por servicio
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/profesionales/{{servicioId}}/especialiades
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

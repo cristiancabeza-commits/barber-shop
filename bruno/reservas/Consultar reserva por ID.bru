@@ -1,0 +1,15 @@
+meta {
+  name: Consultar reserva por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/reservas/{{reservaId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

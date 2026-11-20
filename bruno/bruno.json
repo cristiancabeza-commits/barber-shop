@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Barrber Shop API CECAR - Gestor",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

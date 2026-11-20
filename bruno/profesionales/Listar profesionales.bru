@@ -1,0 +1,15 @@
+meta {
+  name: Listar profesionales
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/profesionales?soloActivos=false
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,41 @@
+meta {
+  name: Crear servicio
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/servicios
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nombre": "{{nombrePrueba}}",
+    "precio": 25000,
+    "descripcion": "Servicio sintetico para pruebas API",
+    "duracion": 30,
+    "especialidad": {{especialidadId}}
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.servicioId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('servicioId', id);
+    }
+  }
+}

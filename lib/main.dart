@@ -12,7 +12,6 @@ void main() {
   runApp(const AplicacionBarberia());
 }
 
-/// Abre la presentación y el acceso de prueba; compone temas y navegación.
 class AplicacionBarberia extends StatelessWidget {
   const AplicacionBarberia({super.key});
   @override

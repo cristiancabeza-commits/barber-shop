@@ -79,3 +79,10 @@ clases independientes; el coordinador no contiene los cuerpos de las peticiones.
 ## Conteo del panel y prueba de liquidación
 
 Inicio cuenta las reservas desde hoy en adelante, incluidas las de otros meses, y ordena las próximas citas por fecha y hora. Los cierres usan los totales de la API y el detalle de comisión lee la lista comisionServicios. La prueba del 18 de noviembre creó las reservas 108, 109 y 110 y verificó la liquidación 16 y la comisión 6.
+
+## Colección Bruno
+
+La carpeta `bruno` contiene la colección por módulos, sin tests: 52 peticiones que cubren las 45 operaciones documentadas.
+En Bruno selecciona **Open Collection**, abre `bruno` y selecciona el entorno **Produccion**. Configura `usuario` y `clave` en tu equipo, ejecuta **autenticacion → Iniciar sesion** y utiliza las peticiones del módulo correspondiente. El token se guarda durante la ejecución. No subas credenciales ni tokens al repositorio.
+
+Consulta `bruno/README.md` para ver la organización y los pasos de uso.

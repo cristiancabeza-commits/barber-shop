@@ -1,7 +1,6 @@
 import '../models/datos_barberia.dart';
 import 'repositorio_barberia.dart';
 
-/// Implementación local: sus cambios duran hasta cerrar el proceso.
 class RepositorioMemoria extends RepositorioBarberia {
   RepositorioMemoria({DateTime? fecha}) {
     reiniciar(fecha: fecha);
@@ -208,7 +207,7 @@ class RepositorioMemoria extends RepositorioBarberia {
           }, activo: d != 6),
     ];
     _catalogos[Modulo.inasistencias] = [];
-    // Historial coherente, separado de los servicios pendientes de cerrar hoy.
+
     final anterior = dia.subtract(const Duration(days: 7));
     _cierres.add(
       Cierre('C-001', anterior, anterior, [

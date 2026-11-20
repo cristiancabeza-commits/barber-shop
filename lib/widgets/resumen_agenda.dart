@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'tarjeta.dart';
 import '../controllers/estado_aplicacion.dart';
 
-/// Mantiene las etiquetas completas y adapta las columnas al tamaño del texto.
 class ResumenAgenda extends StatelessWidget {
   const ResumenAgenda({super.key});
 
@@ -40,7 +39,7 @@ class ResumenAgenda extends StatelessWidget {
       if (medida.width > anchoTexto) anchoTexto = medida.width;
       medida.dispose();
     }
-    // 32 px de relleno y 2 px adicionales de margen para el texto.
+
     final minimo = anchoTexto + 34;
     return LayoutBuilder(
       builder: (context, constraints) {

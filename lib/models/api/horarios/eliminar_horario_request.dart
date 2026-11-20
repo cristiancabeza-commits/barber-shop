@@ -1,4 +1,3 @@
-/// DELETE /api/horarios-laboral/{id}
 class EliminarHorarioRequest {
   const EliminarHorarioRequest({required this.id});
 

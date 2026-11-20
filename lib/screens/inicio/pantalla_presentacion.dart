@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/logotipo.dart';
 
-/// Identidad de entrada, sin indicadores de sistema simulados.
 class PantallaPresentacion extends StatelessWidget {
   const PantallaPresentacion({super.key});
   @override

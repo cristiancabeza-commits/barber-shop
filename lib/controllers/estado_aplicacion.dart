@@ -3,7 +3,6 @@ import '../repositories/repositorio_barberia.dart';
 import '../repositories/repositorio_memoria.dart';
 import '../repositories/repositorio_remoto.dart';
 
-/// Punto de composición para producción y pruebas.
 abstract final class EstadoAplicacion {
   static DateTime Function() ahora = DateTime.now;
   static RepositorioBarberia repositorio = RepositorioMemoria();

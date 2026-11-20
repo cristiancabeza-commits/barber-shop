@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 
 import '../models/datos_barberia.dart';
 
-/// Operaciones comunes de los catálogos. Cada módulo implementa sus peticiones.
 abstract class RepositorioCatalogo extends ChangeNotifier {
   List<Registro> _registros = [];
   List<Registro> get registros => List.unmodifiable(_registros);

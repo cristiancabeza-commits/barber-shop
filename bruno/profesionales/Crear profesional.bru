@@ -1,0 +1,43 @@
+meta {
+  name: Crear profesional
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/profesionales
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "documento": "{{documentoProfesional}}",
+    "nombres": "Prueba",
+    "apellidos": "Profesional Barrber",
+    "fechaNacimiento": "1990-01-01",
+    "porcentaje": 15,
+    "estado": true,
+    "especialidad": {{especialidadId}}
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.profesionalId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('profesionalId', id);
+    }
+  }
+}

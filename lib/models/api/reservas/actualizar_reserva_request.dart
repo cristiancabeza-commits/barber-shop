@@ -1,4 +1,3 @@
-/// PUT /api/Reservas/{id}
 class ActualizarReservaRequest {
   const ActualizarReservaRequest({
     required this.id,

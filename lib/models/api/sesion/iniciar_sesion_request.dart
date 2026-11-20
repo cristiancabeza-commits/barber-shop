@@ -1,4 +1,3 @@
-/// POST /api/Sesion
 class IniciarSesionRequest {
   const IniciarSesionRequest({required this.usuario, required this.clave});
 

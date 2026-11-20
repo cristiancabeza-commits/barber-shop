@@ -1,0 +1,15 @@
+meta {
+  name: Consultar ultima liquidacion
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/liquidaciones-comisiones?ultimo=true
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

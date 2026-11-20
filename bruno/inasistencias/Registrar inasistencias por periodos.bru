@@ -1,0 +1,33 @@
+meta {
+  name: Registrar inasistencias por periodos
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/eventualidades/masivo
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "profesionalId": {{profesionalId}},
+    "motivo": 4,
+    "observacion": "Prueba sintetica de Bruno",
+    "periodos": [
+      {
+        "fechaInicio": "{{fechaPrueba}}T15:00:00",
+        "fechaFin": "{{fechaPrueba}}T16:00:00"
+      }
+    ]
+  }
+}

@@ -1,4 +1,3 @@
-/// POST /api/eventualidades/masivo
 class CrearInasistenciasMasivasRequest {
   const CrearInasistenciasMasivasRequest({
     required this.profesionalId,

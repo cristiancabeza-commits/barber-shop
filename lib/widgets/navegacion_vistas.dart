@@ -19,7 +19,6 @@ void abrirVista(BuildContext context, String route) {
   }
 }
 
-/// Al cambiar de sección evita acumular copias de los mismos módulos.
 void irSeccion(BuildContext context, String ruta) {
   if (ModalRoute.of(context)?.settings.name == ruta) return;
   Navigator.of(context).pushNamedAndRemoveUntil(
@@ -38,7 +37,6 @@ void regresarVista(BuildContext context) {
   }
 }
 
-/// Los formularios regresan a su listado sin dejar formularios viejos detrás.
 void regresarAlModulo(BuildContext context, String ruta) {
   final navegador = Navigator.of(context);
   var encontrado = false;
@@ -54,7 +52,6 @@ void mostrarAviso(BuildContext context, String message) =>
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(message)));
 
-/// Menú del botón Más: accesos reales a los módulos del prototipo.
 void mostrarModulos(BuildContext context) {
   const modulos = {
     'Especialidades': '/especialidades',

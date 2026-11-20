@@ -1,0 +1,29 @@
+meta {
+  name: Actualizar horario
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/api/horarios-laboral/{{horarioLaboralId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "horaInicio": "08:00:00",
+    "horaFin": "17:30:00",
+    "tieneAlmuerzo": true,
+    "horaInicioAlmuerzo": "12:00:00",
+    "horaFinAlmuerzo": "13:00:00"
+  }
+}

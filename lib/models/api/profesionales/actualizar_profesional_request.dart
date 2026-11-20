@@ -1,4 +1,3 @@
-/// PUT /api/Profesionales/{id}
 class ActualizarProfesionalRequest {
   const ActualizarProfesionalRequest({
     required this.id,

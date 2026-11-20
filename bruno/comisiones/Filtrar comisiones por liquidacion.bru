@@ -1,0 +1,15 @@
+meta {
+  name: Filtrar comisiones por liquidacion
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/comisiones?liquidacionComisionId={{liquidacionId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

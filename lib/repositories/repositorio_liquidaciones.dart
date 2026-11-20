@@ -8,7 +8,6 @@ import '../models/api/liquidaciones/listar_liquidaciones_request.dart';
 import '../services/remote/api_service.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Consulta y crea liquidaciones; conserva los totales devueltos por la API.
 class RepositorioLiquidaciones extends ChangeNotifier {
   RepositorioLiquidaciones(ServicioBarberia conexion)
     : _liquidaciones = LiquidacionesService(conexion);

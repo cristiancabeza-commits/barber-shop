@@ -1,0 +1,25 @@
+meta {
+  name: Actualizar especialidad
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/especialidades/{{especialidadId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nombre": "{{nombrePrueba}} editada"
+  }
+}

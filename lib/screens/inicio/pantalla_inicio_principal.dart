@@ -7,7 +7,6 @@ import '../../widgets/componentes.dart';
 import '../../widgets/resumen_agenda.dart';
 import '../../models/datos_barberia.dart';
 
-/// Prioriza las citas próximas y la creación de reservas sobre los catálogos.
 class PantallaInicioPrincipal extends StatelessWidget {
   const PantallaInicioPrincipal({super.key});
   List<Reserva> proximasCitas() {

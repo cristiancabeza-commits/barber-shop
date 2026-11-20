@@ -53,7 +53,7 @@ void main() {
       });
       await http.runWithClient(() async {
         await sesion.iniciar('usuario', 'clave');
-        // Se recarga cada módulo directamente, sin pasar por cargar() del coordinador.
+
         await repositorio.especialidades.cargar();
         expect(
           repositorio.listar(Modulo.especialidades).single.nombre,

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/componentes.dart';
 
-/// Vista complementaria: Ejemplo de validación.
-/// Mantiene la identidad visual roja, dorada y oscura.
 class PantallaErroresValidacion extends StatelessWidget {
   const PantallaErroresValidacion({super.key});
   @override

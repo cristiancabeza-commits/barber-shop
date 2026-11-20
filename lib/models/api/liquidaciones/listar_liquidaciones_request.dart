@@ -1,4 +1,3 @@
-/// GET /api/liquidaciones-comisiones
 class ListarLiquidacionesRequest {
   const ListarLiquidacionesRequest({
     this.ultimo,

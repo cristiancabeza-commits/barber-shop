@@ -11,7 +11,6 @@ import '../models/api/horarios/listar_horarios_request.dart';
 import '../models/api/horarios/listar_horarios_por_profesional_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Datos y operaciones de horarios. Las peticiones HTTP están en HorariosService.
 class RepositorioHorarios extends RepositorioCatalogo {
   RepositorioHorarios(ServicioBarberia conexion)
     : _servicio = HorariosService(conexion);

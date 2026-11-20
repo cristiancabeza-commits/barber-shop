@@ -4,7 +4,6 @@ import '../models/api/agenda/consultar_agenda_diaria_request.dart';
 import '../models/api/agenda/consultar_disponibilidad_request.dart';
 import '../services/remote/servicio_barberia.dart';
 
-/// Coordina las consultas de agenda usando su servicio remoto.
 class RepositorioAgenda {
   RepositorioAgenda(ServicioBarberia conexion)
     : _agenda = AgendaService(conexion);

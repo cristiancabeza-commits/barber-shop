@@ -588,7 +588,7 @@ class _EstadoDetalleReserva extends State<DetalleReserva> {
         ],
       ),
     );
-    // El diálogo mantiene sus campos hasta terminar la animación de salida.
+
     Future<void>.delayed(
       const Duration(milliseconds: 400),
       controlador.dispose,

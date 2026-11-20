@@ -1,4 +1,3 @@
-/// GET /api/Reservas/{id}
 class ConsultarReservaRequest {
   const ConsultarReservaRequest({required this.id});
 

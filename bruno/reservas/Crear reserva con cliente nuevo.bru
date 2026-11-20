@@ -1,0 +1,44 @@
+meta {
+  name: Crear reserva con cliente nuevo
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/reservas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "fecha": "{{fechaOtra}}",
+    "servicioId": {{servicioId}},
+    "documento": "{{documentoNuevoCliente}}",
+    "nombres": "Prueba nueva",
+    "apellidos": "Barrber",
+    "fechaNacimiento": "1995-05-15",
+    "celular": "3000000003",
+    "correo": "prueba-nueva@example.invalid"
+  }
+}
+
+script:post-response {
+  // Reutiliza el identificador del registro creado en las siguientes peticiones.
+  if (res.getStatus() >= 200 && res.getStatus() < 300) {
+    const body = res.getBody();
+    const dato = body?.data ?? body;
+    const id = typeof dato === 'number' ? dato : (Array.isArray(dato) ? dato[0]?.id : dato?.id) ?? dato?.reservaNuevaId ?? dato?.reserva?.id ?? body?.id;
+    if (id !== undefined && id !== null) {
+      bru.setVar('reservaNuevaId', id);
+    }
+  }
+}

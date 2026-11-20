@@ -1,0 +1,15 @@
+meta {
+  name: Consultar inasistencia por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/eventualidades/{{eventualidadId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

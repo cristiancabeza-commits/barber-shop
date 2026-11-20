@@ -1,4 +1,3 @@
-/// PUT /api/Clientes/{id}
 class ActualizarClienteRequest {
   const ActualizarClienteRequest({
     required this.id,
